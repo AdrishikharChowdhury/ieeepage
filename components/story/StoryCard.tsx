@@ -16,11 +16,11 @@ const StoryCard = ({ title, date, description, side }: StoryCardProps) => {
         side === "left" ? "rounded-bl-4xl" : "rounded-br-4xl"
       )}
     >
-      <span className="inline-block bg-blue-500 text-white text-sm font-semibold px-3 py-1 rounded-full mb-3">
+      <span className="inline-block bg-blue-500 text-white text-sm font-semibold px-3 py-1 rounded-sm mb-3">
         {date}
       </span>
-      <h2 className="text-2xl font-bold text-gray-800 mb-3">{title}</h2>
-      <p className="text-gray-600 text-justify leading-relaxed">{description}</p>
+      <h2 className="text-xl font-bold text-gray-800 mb-3">{title}</h2>
+      <p className="text-gray-600 text-sm text-justify leading-relaxed">{description}</p>
     </div>
   )
 }
