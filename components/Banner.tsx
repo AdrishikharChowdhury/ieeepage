@@ -4,18 +4,18 @@ import Aurora from "./Aurora";
 const Banner = () => {
   return (
     <section className="w-full h-screen bg-white p-10 pt-35">
-      <div className="bg-blue-800 h-full rounded-2xl overflow-hidden relative">
+      <div className="bg-blue-800 h-full rounded-2xl overflow-hidden relative" id="home" >
         <Aurora
           colorStops={["#00d4ff", "#0072ff", "#00d4ff"]}
           blend={0.5}
           amplitude={1.0}
-          speed={0.5}
+          speed={1}
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-white px-10 text-center">
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md rounded-full px-5 py-2 text-sm font-medium mb-8 border border-white/20">
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              IEEE Student Branch — Est. 2024
+              IEEE Student Branch — Est. 2022
             </div>
 
             <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-none mb-6">
