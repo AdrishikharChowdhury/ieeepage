@@ -1,9 +1,10 @@
+import Banner from '@/components/Banner';
 import React from 'react'
 
 const page = () => {
   return (
-    <div>
-      
+    <div className='flex flex-col'>
+      <Banner />
     </div>
   )
 }
