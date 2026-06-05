@@ -1,25 +1,73 @@
-import React from "react";
+import StoryHeader from "@/components/story/StoryHeader";
+import StoryCard from "@/components/story/StoryCard";
+import MilestoneButton from "@/components/story/MilestoneButton";
+import Link from "next/link";
+import { milestones } from "@/lib/constants";
+import { ChevronsRight } from "lucide-react";
 
 const Story = () => {
   return (
-    <section className="min-h-screen w-full bg-blue-500 p-5 flex flex-col gap-6" id="story">
-      <div className="flex justify-between w-full">
-        <h1 className="bg-white px-10 py-6 rounded-full font-extrabold w-fit h-fit text-4xl text-nowrap">
-          Our Story
-        </h1>
-        <div className="p-6 bg-white rounded-b-4xl rounded-l-4xl w-3/5 flex flex-col gap-4 justify-center items-center">
-        <h2 className="text-2xl font-bold text-center" >IEEE Student Branch Foundation</h2>
-        <p className='text-justify tracking-widest text-lg/8 italic' >The journey began with the official establishment of the main IEEE Student Branch on August 4, 2022. This foundational milestone laid the groundwork for future technical societies and professional growth on the campus.</p>
+    <section
+      className="h-screen w-full bg-linear-to-b from-blue-500 to-blue-700 px-5 md:px-10 py-16 flex flex-col items-center"
+      id="story"
+    >
+      <StoryHeader />
+
+      <div className="relative w-full">
+        <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-white/30 -translate-x-1/2 hidden md:block" />
+
+        <div className="absolute left-4.5 top-0 bottom-0 w-1 bg-white/30 md:hidden" />
+
+        <div className="flex flex-col gap-8">
+          {milestones.map((m, i) => (
+            <div key={i} className="relative flex items-start">
+              <div className="hidden md:flex w-5/12 items-start">
+                {m.side === "left" && (
+                  <StoryCard
+                    title={m.title}
+                    date={m.date}
+                    description={m.description}
+                    side={m.side}
+                  />
+                )}
+              </div>
+
+              <div className="hidden md:flex w-2/12 justify-center">
+                <MilestoneButton index={i} />
+              </div>
+
+              <div className="hidden md:flex w-5/12 items-start">
+                {m.side === "right" && (
+                  <StoryCard
+                    title={m.title}
+                    date={m.date}
+                    description={m.description}
+                    side={m.side}
+                  />
+                )}
+              </div>
+
+              <div className="flex md:hidden items-start gap-6 w-full">
+                <div className="flex flex-col items-center pt-2">
+                  <MilestoneButton index={i} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <StoryCard
+                    title={m.title}
+                    date={m.date}
+                    description={m.description}
+                    side={m.side}
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-      <div className="p-6 bg-white rounded-b-4xl rounded-r-4xl w-3/5 flex flex-col gap-4 justify-center items-center">
-          <h2 className="text-2xl font-bold text-center" >Growth in Computational Intelligence</h2>
-        <p className='text-justify tracking-widest text-lg/8 italic' >Expanding its academic and research reach, the institution established the IEEE Student Chapter (SC) for the Computational Intelligence Society (CIS) on May 23, 2024. This addition focused on fostering advanced skills and knowledge in AI and computing fields.</p>
-        </div>
-        <div className="p-6 bg-white rounded-b-4xl rounded-l-4xl w-3/5 flex flex-col gap-4 justify-center items-center self-end">
-        <h2 className="text-2xl font-bold text-center" >Dual Expansion: Industry Focus and Inclusivity</h2>
-        <p className='text-justify tracking-widest text-lg/8 italic' >A major dual milestone occurred on April 5, 2025, when two distinct groups were formed simultaneously. The first was the IEEE Student Chapter for the Industrial Electronics Society (IES), aimed at specializing in hardware and electronic applications. On the exact same day, the IEEE Student Affinity Group for Women in Engineering (WIE) was established to promote diversity and empower female student leaders in technology.</p>
-        </div>
+      <Link href="/story" className="pb-2 pt-4 text-white flex gap-1 text-lg items-center">
+        <p>Know More</p>
+        <ChevronsRight className="mt-0.5" />
+      </Link>
     </section>
   );
 };
