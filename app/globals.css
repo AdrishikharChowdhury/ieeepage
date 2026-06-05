@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+main{
+    @apply max-w-4xl w-full;
+}
