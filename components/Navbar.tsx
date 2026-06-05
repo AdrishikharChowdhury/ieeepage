@@ -33,7 +33,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='w-full px-12 py-6 flex justify-between items-center shadow-xl fixed z-100 bg-white'>
+    <nav className='w-full px-12 py-6 flex justify-between items-center shadow-xl z-100 bg-white'>
       <Link href="/" className="flex items-center gap-2 font-bold text-4xl h-auto">
         <Image src='/logo.png' alt='logo' width={120} height={100} className='' />
         <p className='flex gap-2 items-center' >

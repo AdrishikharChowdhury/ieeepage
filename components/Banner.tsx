@@ -3,7 +3,7 @@ import Aurora from "./Aurora";
 
 const Banner = () => {
   return (
-    <section className="w-full h-screen bg-white p-10 pt-35">
+    <section className="w-full h-screen bg-white p-10 pt-10">
       <div className="bg-blue-800 h-full rounded-2xl overflow-hidden relative" id="home" >
         <Aurora
           colorStops={["#00d4ff", "#0072ff", "#00d4ff"]}
