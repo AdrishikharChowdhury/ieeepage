@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", openSans.variable, geistMono.variable, "font-mono", jetbrainsMono.variable)}
+      className={cn("h-full", "antialiased", openSans.variable)}
     >
       <body className="h-screen flex flex-col">
         <Navbar />
