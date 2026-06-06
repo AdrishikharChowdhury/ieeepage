@@ -1,6 +1,7 @@
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { blogs } from "@/lib/constants";
 import { BlogCard } from "@/components/ui/BlogCard";
+import SkeletonWrapper from "@/components/SkeletonWrapper";
 
 const tagColors: Record<string, string> = {
   Announcement: "bg-ieee-blue text-white",
@@ -29,20 +30,22 @@ export default function BlogsPage() {
             Create a Blog
           </a>
         </div>
-        <div className="grid grid-cols-2 gap-6 md:gap-8">
-          {blogs.map((post, idx) => (
-            <BlogCard
-              key={idx}
-              title={post.title}
-              date={post.date}
-              tagLabel={post.tagLabel}
-              tagColor={tagColors[post.tagLabel] ?? "bg-ink/10 text-ink/70"}
-              author={post.author!}
-              email={post.email}
-              slug={post.slug}
-            />
-          ))}
-        </div>
+        <SkeletonWrapper>
+          <div className="grid grid-cols-2 gap-6 md:gap-8">
+            {blogs.map((post, idx) => (
+              <BlogCard
+                key={idx}
+                title={post.title}
+                date={post.date}
+                tagLabel={post.tagLabel}
+                tagColor={tagColors[post.tagLabel] ?? "bg-ink/10 text-ink/70"}
+                author={post.author!}
+                email={post.email}
+                slug={post.slug}
+              />
+            ))}
+          </div>
+        </SkeletonWrapper>
       </section>
     </div>
   );

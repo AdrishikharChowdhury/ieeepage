@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Open_Sans, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import "@aejkatappaja/phantom-ui/ssr.css";
 import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/Footer";
