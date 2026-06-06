@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/Footer";
+import PageLoader from "@/components/PageLoader";
 
 const jetbrainsMono = JetBrains_Mono({subsets:['latin'],variable:'--font-mono'});
 
@@ -33,6 +34,7 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", openSans.variable)}
     >
       <body className="bg-light-canvas">
+        <PageLoader />
         <Navbar />
         {children}
         <Footer />
