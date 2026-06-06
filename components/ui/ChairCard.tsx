@@ -10,7 +10,7 @@ export function ChairCard({ name, role, avatar, src, alt, color }: ChairCardProp
     <div className="bg-white-card rounded-2xl overflow-hidden flex flex-col">
       <div className={`h-2 rounded-t-2xl w-full ${color}`} />
       <div className="flex flex-col items-center text-center gap-3">
-        <div className="overflow-hidden shrink-0">
+        <div className="overflow-hidden size-100 shrink-0">
           <Image src={avatar} alt={name} width={160} height={80} className="w-full h-full object-cover" />
         </div>
         <h3

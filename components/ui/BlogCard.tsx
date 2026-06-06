@@ -31,8 +31,7 @@ export function BlogCard({ title, date, tag, tagLabel, className }: BlogCardProp
         <span className={cn("text-xs font-bold px-3 py-1.5 rounded-tags self-start", tagStyles[tag])}>
         {tagLabel}
       </span>
-      <h3 className="text-[26px] font-bold leading-[1.1] tracking-[0.52px] text-ink"
-        style={{ fontFamily: "'PP Neue Corp Compact', 'Oswald', 'Anton', sans-serif" }}>
+      <h3 className="text-[26px] font-bold leading-[1.1] tracking-[0.52px] text-ink">
         {title}
       </h3>
 

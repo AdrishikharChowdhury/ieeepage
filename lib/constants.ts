@@ -132,6 +132,16 @@ export const milestoneTagColors = [
   "bg-ieee-green text-white",
 ];
 
+const heights = [280, 360, 240, 320, 260, 380, 300, 340, 220, 400, 310, 270, 350, 230, 390, 290, 330, 250];
+
+export const eventImages = Array.from({ length: 18 }, (_, i) => ({
+  src: `/events/highlights${i + 1}.jpeg`,
+  alt: `Event highlight ${i + 1}`,
+  id: `highlight-${i + 1}`,
+  url: '',
+  height: heights[i],
+}));
+
 export const collegeLogos = [
   { src: "/aicte-webp.webp", alt: "AICTE" },
   { src: "/makaut-webp.webp", alt: "MAKAUT" },

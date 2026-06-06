@@ -1,5 +1,6 @@
 import Banner from '@/components/Banner';
 import Board from '@/components/Board';
+import HighLights from '@/components/HighLights';
 import Story from '@/components/Story';
 import Timeline from '@/components/Timeline';
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Story />
       <Timeline />
       <Board />
+      <HighLights />
     </>
   );
 }
