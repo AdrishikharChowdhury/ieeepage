@@ -1,16 +1,17 @@
-import { blogPosts } from '@/lib/constants';
-import { BlogCard } from './ui/BlogCard';
+import { EventCard } from './ui/EventCard';
+import type { EventCardProps } from './ui/EventCard';
 import Link from 'next/link';
 import { SectionHeader } from './ui/SectionHeader';
+import { events } from '@/lib/constants';
 
 const Events = () => {
   return (
     <section className="w-full py-20 bg-white-card" id="events">
         <div className="mx-auto w-full max-w-6xl">
-          <SectionHeader label="The" accent="Timeline"  />
+          <SectionHeader label="The" accent="Events"  />
           <div className="flex gap-4 overflow-x-auto pb-4 px-6 snap-x snap-mandatory scrollbar-none">
-            {blogPosts.map((post, i) => (
-              <BlogCard key={i} {...post} />
+            {events.map((post, i) => (
+              <EventCard key={i} {...post as EventCardProps} />
             ))}
           </div>
           <div className="flex justify-center mt-12">

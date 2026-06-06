@@ -1,6 +1,7 @@
 "use client";
 import { stats } from "@/lib/constants";
 import Aurora from "./Aurora";
+import Link from "next/link";
 
 const Banner = () => {
   return (
@@ -34,12 +35,12 @@ const Banner = () => {
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="bg-white text-blue-600 font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg">
+              <Link href="/blogs" className="bg-white text-blue-600 font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg">
                 Get Involved
-              </button>
-              <button className="bg-transparent border-2 border-white/40 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 hover:border-white/60 transition-all duration-300 text-lg">
+              </Link>
+              <Link href="/events"  className="bg-transparent border-2 border-white/40 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 hover:border-white/60 transition-all duration-300 text-lg">
                 Explore Events
-              </button>
+              </Link>
             </div>
           </div>
           
