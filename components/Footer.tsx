@@ -45,8 +45,8 @@ export default function Footer() {
       <div className="mx-auto w-full max-w-7xl px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-ieee-blue font-bold text-xl">IEEE</span>
+            <div className="flex items-center gap-3 font-bold mb-4">
+              <span className="text-ieee-blue text-xl">IEEE</span> STCET SB
             </div>
             <p className="text-sm text-ink/60 max-w-xs leading-relaxed">
               St. Thomas&apos; College of Engineering & Technology IEEE Student Branch

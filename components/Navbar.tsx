@@ -28,9 +28,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-16 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-4">
       <div className="flex items-center justify-between bg-white rounded-2xl px-6 py-4">
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <Image src='/logo.png' alt='IEEE STCET SB' width={100} height={50} className="object-contain" />
-          <span className="text-2xl font-bold leading-none tracking-tight">
+        <Link href="/" className="flex items-center justify-center gap-2 shrink-0">
+          <Image src='/logo.png' alt='IEEE STCET SB' width={100} height={50} className="object-cover" />
+          <span className="text-2xl font-bold leading-none tracking-tight ">
             <span className="text-ieee-blue">IEEE</span> STCET SB
           </span>
         </Link>
