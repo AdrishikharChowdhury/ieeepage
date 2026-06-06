@@ -3,6 +3,7 @@ import { Open_Sans, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/Footer";
 
 const jetbrainsMono = JetBrains_Mono({subsets:['latin'],variable:'--font-mono'});
 
@@ -31,9 +32,11 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", openSans.variable)}
     >
-      <body className="h-screen flex flex-col">
+      <body className="bg-light-canvas">
         <Navbar />
-        {children}</body>
+        {children}
+        <Footer />
+        </body>
     </html>
   );
 }

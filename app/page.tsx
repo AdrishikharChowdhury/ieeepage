@@ -1,14 +1,16 @@
 import Banner from '@/components/Banner';
 import Story from '@/components/Story';
-import React from 'react'
+import Footer from '@/components/Footer';
+import { StatCard } from '@/components/ui/StatCard';
+import { BlogCard } from '@/components/ui/BlogCard';
+import { LogoStrip } from '@/components/ui/LogoStrip';
+import { stats, blogPosts, partnerLogos } from '@/lib/constants';
 
-const page = () => {
+export default function Home() {
   return (
-    <div className='flex flex-col'>
+    <>
       <Banner />
       <Story />
-    </div>
-  )
+    </>
+  );
 }
-
-export default page
