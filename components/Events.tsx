@@ -3,9 +3,9 @@ import { BlogCard } from './ui/BlogCard';
 import Link from 'next/link';
 import { SectionHeader } from './ui/SectionHeader';
 
-const Timeline = () => {
+const Events = () => {
   return (
-    <section className="w-full py-20 bg-white-card" id="timeline">
+    <section className="w-full py-20 bg-white-card" id="events">
         <div className="mx-auto w-full max-w-6xl">
           <SectionHeader label="The" accent="Timeline"  />
           <div className="flex gap-4 overflow-x-auto pb-4 px-6 snap-x snap-mandatory scrollbar-none">
@@ -15,7 +15,7 @@ const Timeline = () => {
           </div>
           <div className="flex justify-center mt-12">
           <Link
-            href="/timeline"
+            href="/events"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-ink border border-ink rounded-full transition-colors hover:bg-ink hover:text-white"
           >
             <span>Know More</span>
@@ -29,4 +29,4 @@ const Timeline = () => {
   )
 }
 
-export default Timeline
+export default Events

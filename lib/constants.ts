@@ -33,7 +33,7 @@ export const stats = [
 export const navLinks = [
   { label: "Home", route: "/", id: "home" },
   { label: "Our Story", route: "/story", id: "story" },
-  { label: "Timeline", route: "/timeline", id: "timeline" },
+  { label: "Events", route: "/events", id: "events" },
   { label: "The Board", route: "/board", id: "board" },
   { label: "Highlights", route: "/highlights", id: "highlights" },
 ];
@@ -97,7 +97,7 @@ export const footerLinkGroups: FooterLinkGroup[] = [
     links: [
       { label: "Our Story", href: "/story" },
       { label: "The Board", href: "/board" },
-      { label: "Timeline", href: "/timeline" },
+      { label: "Events", href: "/events" },
     ],
   },
   {
@@ -163,7 +163,7 @@ export const chairs: Chair[] = [
     role: "Chair",
     avatar: "/ieeechair.jpg",
     src: "/ies-ieee.png",
-    alt: "Industry Applications Society",
+    alt: "Industry Electronics Society",
     color: "bg-ieee-blue",
   },
   {
@@ -181,5 +181,32 @@ export const chairs: Chair[] = [
     src: "/cis-logo.png",
     alt: "Computational Intelligence Society",
     color: "bg-ieee-teal",
+  },
+];
+
+export const branchAdvisors: Chair[] = [
+  {
+    name: "Dr. Prasun Chowdhury",
+    role: "Branch Advisor",
+    avatar: "/iesba.webp",
+    src: "/ies-ieee.png",
+    alt: "Industry Electronics Society",
+    color: "bg-ieee-green",
+  },
+  {
+    name: "Dr. Biswajita Dutta",
+    role: "Branch Advisor",
+    avatar: "/wieba.webp",
+    src: "/wie-logo.png",
+    alt: "Women in Engineering",
+    color: "bg-ieee-red",
+  },
+  {
+    name: "Dr. Amit Paul",
+    role: "Branch Advisor & SB Councellor",
+    avatar: "/cisba.jpg",
+    src: "/cis-logo.png",
+    alt: "Computational Intelligence Society",
+    color: "bg-ieee-purple",
   },
 ];
