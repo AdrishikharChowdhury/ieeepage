@@ -31,7 +31,7 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", openSans.variable)}
     >
-      <body className="h-screen flex flex-col">
+      <body className="bg-[var(--color-light-canvas)]">
         <Navbar />
         {children}</body>
     </html>

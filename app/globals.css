@@ -1,5 +1,87 @@
 @import "tailwindcss";
 
-main{
-    @apply max-w-4xl w-full;
+@theme {
+  --color-light-canvas: #f4f4f4;
+  --color-white-card: #ffffff;
+  --color-ink: #1a1a1a;
+  --color-pure-black: #000000;
+  --color-ieee-blue: #006699;
+  --color-ieee-navy: #003366;
+  --color-ieee-teal: #009999;
+  --color-ieee-green: #669900;
+  --color-ieee-red: #cc0000;
+  --color-ieee-purple: #660099;
+  --color-ieee-gold: #ffcc00;
+  --color-ieee-light-blue: #66b2cc;
+
+  --radius-cards: 40px;
+  --radius-pills: 800px;
+  --radius-inputs: 100px;
+  --radius-buttons: 40px;
+  --radius-tags: 20px;
+  --radius-ieee-badge: 8px;
+  --radius-ieee-wedge: 0px;
+}
+
+:root {
+  --color-light-canvas: #f4f4f4;
+  --color-white-card: #ffffff;
+  --color-ink: #1a1a1a;
+  --color-pure-black: #000000;
+  --color-ieee-blue: #006699;
+  --color-ieee-navy: #003366;
+  --color-ieee-teal: #009999;
+  --color-ieee-green: #669900;
+  --color-ieee-red: #cc0000;
+  --color-ieee-purple: #660099;
+  --color-ieee-gold: #ffcc00;
+  --color-ieee-light-blue: #66b2cc;
+
+  --surface-light-canvas: #f4f4f4;
+  --surface-white-card: #ffffff;
+  --surface-primary: #006699;
+  --surface-decorative: #009999;
+  --surface-deep: #003366;
+
+  --text-caption: 12px;      --leading-caption: 1.2;
+  --text-body-sm: 14px;      --leading-body-sm: 1.55;
+  --text-body: 16px;         --leading-body: 1.5;
+  --text-subheading: 18px;   --leading-subheading: 1.25;
+  --text-heading-sm: 26px;   --leading-heading-sm: 1.1;   --tracking-heading-sm: 0.52px;
+  --text-heading: 40px;      --leading-heading: 1;         --tracking-heading: 0.8px;
+  --text-heading-lg: 64px;   --leading-heading-lg: 0.95;  --tracking-heading-lg: 1.28px;
+  --text-display: 96px;      --leading-display: 0.94;      --tracking-display: 1.92px;
+  --text-display-xl: 189px;  --leading-display-xl: 0.94;  --tracking-display-xl: 3.78px;
+
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-56: 56px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
+  --spacing-92: 92px;
+
+  --page-max-width: 1280px;
+  --section-gap: 80px;
+  --card-padding: 24px;
+  --element-gap: 10px;
+
+  --radius-tags: 20px;
+  --radius-cards: 40px;
+  --radius-pills: 800px;
+  --radius-inputs: 100px;
+  --radius-buttons: 40px;
+  --radius-ieee-badge: 8px;
+  --radius-ieee-wedge: 0px;
+}
+
+body {
+  background-color: var(--color-light-canvas);
 }

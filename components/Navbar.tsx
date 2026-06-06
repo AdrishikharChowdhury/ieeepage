@@ -33,45 +33,44 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='w-full px-12 py-6 flex justify-between items-center shadow-xl z-100 bg-white'>
-      <Link href="/" className="flex items-center gap-2 font-bold text-4xl h-auto">
-        <Image src='/logo.png' alt='logo' width={120} height={100} className='' />
-        <p className='flex gap-2 items-center' >
-          <span className="font-extrabold text-blue-700" >IEEE</span>
-          <span>STCET SB</span>
-        </p>
-      </Link>
-      <ul className='flex gap-8 items-center'>
-        {links.map(({ label, route, id }) => {
-          const isActive = pathname === route || (pathname === '/' && hash === `#${id}`);
-          return (
-            <li key={route}>
-              <Link
-                href={pathname === '/' ? `#${id}` : route}
-                onClick={(e) => handleClick(e, id)}
-                className={`relative pb-1.5 group transition-colors duration-300 ${
-                  isActive ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
-                }`}
-              >
-                {label}
-                <span
-                  className={`absolute bottom-0 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
-                    isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`}
-                />
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-      <Link
-        href="/stories"
-        className='bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300'
-      >
-        Stories
-      </Link>
-    </nav>
-  )
-}
+    <nav className="fixed top-12 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-4">
+      <div className="flex items-center justify-between bg-white rounded-pills px-6 py-6">
+        <Link href="/" className="flex items-center gap-2 shrink-0">
+          <Image src='/logo.png' alt='IEEE STCET SB' width={100} height={50} className="object-contain" />
+          <span className="text-2xl font-bold leading-none tracking-tight">
+            <span className="text-ieee-blue" >IEEE</span> STCET SB
+          </span>
+        </Link>
 
-export default Navbar
+        <ul className="hidden md:flex items-center gap-8">
+          {links.map(({ label, route, id }) => {
+            const isActive = pathname === route || (pathname === '/' && hash === `#${id}`);
+            return (
+              <li key={route}>
+                <Link
+                  href={pathname === '/' ? `#${id}` : route}
+                  onClick={(e) => handleClick(e, id)}
+                  className={`text-md font-medium duration-200 hover:text-ieee-blue ${isActive ? 'text-ieee-blue' :"text-ink transition-colors" } `}
+                >
+                  {label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+
+        <div className="flex items-center gap-3">
+
+          <Link
+            href="/story"
+            className="bg-ieee-blue text-white text-md font-medium px-10 py-4 rounded-[40px] transition-opacity hover:opacity-90 leading-none"
+          >
+            Stories
+          </Link>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

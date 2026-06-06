@@ -5,13 +5,13 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="w-full bg-gradient-to-b from-slate-50 via-blue-50 to-slate-50">
+    <div className="w-full bg-linear-to-b from-slate-50 via-blue-50 to-slate-50">
       {/* About IEEE STCET SB Section */}
       <section className="mx-auto max-w-6xl px-4 md:px-8 py-16">
         <div className="mb-12">
           <h1 className="text-5xl md:text-6xl font-bold text-left py-8 border-b-4 border-blue-500 inline-block">
             <span className="text-slate-900">About</span>{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">IEEE STCET SB</span>
+            <span className="bg-linear-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">IEEE STCET SB</span>
           </h1>
         </div>
         
@@ -21,9 +21,9 @@ const page = () => {
               key={idx}
               className="group relative border-l-4 border-blue-500 bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:translate-x-1 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-linear-to-r from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative z-10">
-                <span className="inline-block bg-gradient-to-r from-blue-600 to-blue-500 text-white text-xs font-bold px-4 py-2 rounded-full mb-4 shadow-md">
+                <span className="inline-block bg-linear-to-r from-blue-600 to-blue-500 text-white text-xs font-bold px-4 py-2 rounded-full mb-4 shadow-md">
                   {date}
                 </span>
                 <h2 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{title}</h2>
@@ -40,12 +40,12 @@ const page = () => {
       <section className="mx-auto max-w-6xl px-4 md:px-8 py-16">
         <div className="mb-12">
           <h1 className="text-5xl md:text-6xl font-bold text-left py-8 border-b-4 border-blue-500 inline-block">
-            <span className="text-slate-900">About</span> <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">STCET</span>
+            <span className="text-slate-900">About</span> <span className="bg-linear-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">STCET</span>
           </h1>
         </div>
         
         <div className="group border-l-4 border-blue-500 bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:translate-x-1 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-linear-to-r from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <p className="relative z-10 text-slate-700 text-lg leading-relaxed text-justify">
             St. Thomas' College of Engineering & Technology in Kolkata is a
             prestigious institution renowned for its academic excellence and
@@ -64,13 +64,13 @@ const page = () => {
       <section className="mx-auto max-w-6xl px-4 md:px-8 py-16">
         <div className="mb-12">
           <h1 className="text-5xl md:text-6xl font-bold text-left py-8 border-b-4 border-blue-500 inline-block">
-            <span className="text-slate-900">Brief</span> <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">History</span>
+            <span className="text-slate-900">Brief</span> <span className="bg-linear-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">History</span>
           </h1>
         </div>
 
         <div className="grid gap-6 md:gap-8 mb-12">
           <div className="group border-l-4 border-blue-500 bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:translate-x-1 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-linear-to-r from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <p className="relative z-10 text-slate-700 text-lg leading-relaxed text-justify">
               In a bid to supplement the efforts of the West Bengal Government
               College and the All India Council for Technical Education (AICTE) in
@@ -90,7 +90,7 @@ const page = () => {
           </div>
 
           <div className="group border-l-4 border-blue-500 bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:translate-x-1 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-linear-to-r from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <p className="relative z-10 text-slate-700 text-lg leading-relaxed text-justify">
               The college is affiliated to Maulana Abul Kalam Azad University of
               Technology, West Bengal (MAKAUT, WB), formerly known as West Bengal
@@ -99,7 +99,7 @@ const page = () => {
           </div>
 
           <div className="group border-l-4 border-blue-500 bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:translate-x-1 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-linear-to-r from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <p className="relative z-10 text-slate-700 text-lg leading-relaxed text-justify">
               The college is approved by the All India Council for Technical
               Education (AICTE). All the courses are approved by AICTE and
