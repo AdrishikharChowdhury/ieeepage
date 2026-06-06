@@ -54,7 +54,7 @@ const Navbar = () => {
 
         <div className="flex items-center gap-3">
           <Link
-            href="/story"
+            href="/blogs"
             className="bg-ieee-blue text-white text-md font-medium px-8 py-5 rounded-xl transition-opacity hover:opacity-90 leading-none"
           >
             Stories
