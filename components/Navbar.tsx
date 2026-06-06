@@ -3,14 +3,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-const links = [
-  { label: 'Home', route: '/', id: 'home' },
-  { label: 'Our Story', route: '/story', id: 'story' },
-  { label: 'Timeline', route: '/timeline', id: 'timeline' },
-  { label: 'The Board', route: '/board', id: 'board' },
-  { label: 'Highlights', route: '/highlights', id: 'highlights' },
-];
+import { navLinks } from '@/lib/constants';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -33,24 +26,24 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-12 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-4">
-      <div className="flex items-center justify-between bg-white rounded-pills px-6 py-6">
+    <nav className="fixed top-16 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-4">
+      <div className="flex items-center justify-between bg-white rounded-2xl px-6 py-4">
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <Image src='/logo.png' alt='IEEE STCET SB' width={100} height={50} className="object-contain" />
           <span className="text-2xl font-bold leading-none tracking-tight">
-            <span className="text-ieee-blue" >IEEE</span> STCET SB
+            <span className="text-ieee-blue">IEEE</span> STCET SB
           </span>
         </Link>
 
         <ul className="hidden md:flex items-center gap-8">
-          {links.map(({ label, route, id }) => {
+          {navLinks.map(({ label, route, id }) => {
             const isActive = pathname === route || (pathname === '/' && hash === `#${id}`);
             return (
               <li key={route}>
                 <Link
                   href={pathname === '/' ? `#${id}` : route}
                   onClick={(e) => handleClick(e, id)}
-                  className={`text-md font-medium duration-200 hover:text-ieee-blue ${isActive ? 'text-ieee-blue' :"text-ink transition-colors" } `}
+                  className={`text-md font-medium duration-200 hover:text-ieee-blue ${isActive ? 'text-ieee-blue' : "text-ink transition-colors"}`}
                 >
                   {label}
                 </Link>
@@ -60,10 +53,9 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-3">
-
           <Link
             href="/story"
-            className="bg-ieee-blue text-white text-md font-medium px-10 py-4 rounded-[40px] transition-opacity hover:opacity-90 leading-none"
+            className="bg-ieee-blue text-white text-md font-medium px-8 py-5 rounded-xl transition-opacity hover:opacity-90 leading-none"
           >
             Stories
           </Link>

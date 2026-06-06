@@ -11,9 +11,9 @@ export function StatCard({ label, value, variant = "primary", className }: StatC
   return (
     <div
       className={cn(
-        "rounded-[40px] px-5 py-6 flex flex-col gap-1",
-        variant === "primary" && "bg-[var(--color-ieee-blue)]",
-        variant === "secondary" && "bg-[var(--color-ieee-navy)]",
+        "rounded-[40px] px-8 py-6 flex flex-col gap-1",
+        variant === "primary" && "bg-ieee-blue",
+        variant === "secondary" && "bg-ieee-navy",
         className
       )}
     >

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { footerLinkGroups, partnerLogos } from "@/lib/constants";
+import { LogoStrip } from "./ui/LogoStrip";
 
 function TwitterIcon() {
   return (
@@ -32,50 +34,28 @@ function MailIcon() {
   );
 }
 
-const linkGroups = [
-  {
-    title: "About",
-    links: [
-      { label: "Our Story", href: "/story" },
-      { label: "The Board", href: "/board" },
-      { label: "Timeline", href: "/timeline" },
-    ],
-  },
-  {
-    title: "Community",
-    links: [
-      { label: "Highlights", href: "/highlights" },
-      { label: "Events", href: "/events" },
-      { label: "Blog", href: "/blog" },
-    ],
-  },
-  {
-    title: "IEEE",
-    links: [
-      { label: "IEEE.org", href: "https://www.ieee.org" },
-      { label: "IEEE Xplore", href: "https://ieeexplore.ieee.org" },
-      { label: "IEEE Collabratec", href: "https://collabratec.ieee.org" },
-    ],
-  },
-];
-
 export default function Footer() {
   return (
-    <footer className="w-full bg-[var(--color-light-canvas)] pt-16 pb-8">
-      <div className="mx-auto w-full max-w-[1280px] px-6">
+    <footer className="w-full bg-light-canvas pt-16 pb-8">
+      <section className="w-full py-20 bg-light-canvas">
+        <div className="mx-auto w-full max-w-7xl px-6">
+          <LogoStrip logos={partnerLogos} />
+        </div>
+      </section>
+      <div className="mx-auto w-full max-w-7xl px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-[var(--color-ieee-blue)] font-bold text-xl">IEEE</span>
+              <span className="text-ieee-blue font-bold text-xl">IEEE</span>
             </div>
-            <p className="text-sm text-[var(--color-ink)]/60 max-w-xs leading-relaxed">
+            <p className="text-sm text-ink/60 max-w-xs leading-relaxed">
               St. Thomas&apos; College of Engineering & Technology IEEE Student Branch
             </p>
           </div>
 
-          {linkGroups.map((group) => (
+          {footerLinkGroups.map((group) => (
             <div key={group.title}>
-              <h4 className="text-sm font-bold text-[var(--color-ink)] mb-4 uppercase tracking-wider">
+              <h4 className="text-sm font-bold text-ink mb-4 uppercase tracking-wider">
                 {group.title}
               </h4>
               <ul className="flex flex-col gap-2.5">
@@ -83,7 +63,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-[var(--color-ink)]/60 hover:text-[var(--color-ieee-blue)] transition-colors"
+                      className="text-sm text-ink/60 hover:text-ieee-blue transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -94,29 +74,29 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-[var(--color-ink)]/10">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-ink/10">
           <div className="flex items-center gap-2">
-            <span className="text-[var(--color-ieee-blue)] text-sm font-bold">IEEE</span>
-            <span className="text-[var(--color-ink)]/20 text-sm">·</span>
-            <span className="text-[var(--color-ieee-blue)] text-sm font-bold tracking-wide">STCET SB</span>
+            <span className="text-ieee-blue text-sm font-bold">IEEE</span>
+            <span className="text-ink/20 text-sm">.</span>
+            <span className="text-ieee-blue text-sm font-bold tracking-wide">STCET SB</span>
           </div>
 
           <div className="flex items-center gap-4">
-            <Link href="#" className="text-[var(--color-ink)]/40 hover:text-[var(--color-ieee-blue)] transition-colors" aria-label="Twitter">
+            <Link href="#" className="text-ink/40 hover:text-ieee-blue transition-colors" aria-label="Twitter">
               <TwitterIcon />
             </Link>
-            <Link href="#" className="text-[var(--color-ink)]/40 hover:text-[var(--color-ieee-blue)] transition-colors" aria-label="GitHub">
+            <Link href="#" className="text-ink/40 hover:text-ieee-blue transition-colors" aria-label="GitHub">
               <GithubIcon />
             </Link>
-            <Link href="#" className="text-[var(--color-ink)]/40 hover:text-[var(--color-ieee-blue)] transition-colors" aria-label="LinkedIn">
+            <Link href="#" className="text-ink/40 hover:text-ieee-blue transition-colors" aria-label="LinkedIn">
               <LinkedinIcon />
             </Link>
-            <Link href="#" className="text-[var(--color-ink)]/40 hover:text-[var(--color-ieee-blue)] transition-colors" aria-label="Email">
+            <Link href="#" className="text-ink/40 hover:text-ieee-blue transition-colors" aria-label="Email">
               <MailIcon />
             </Link>
           </div>
 
-          <p className="text-xs text-[var(--color-ink)]/40 text-center">
+          <p className="text-xs text-ink/40 text-center">
             IEEE STCET Student Branch. All rights reserved.
           </p>
         </div>
