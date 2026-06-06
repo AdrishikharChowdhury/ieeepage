@@ -1,5 +1,4 @@
 import { EventCard } from './ui/EventCard';
-import type { EventCardProps } from './ui/EventCard';
 import Link from 'next/link';
 import { SectionHeader } from './ui/SectionHeader';
 import { events } from '@/lib/constants';
@@ -7,14 +6,14 @@ import { events } from '@/lib/constants';
 const Events = () => {
   return (
     <section className="w-full py-20 bg-white-card" id="events">
-        <div className="mx-auto w-full max-w-6xl">
-          <SectionHeader label="The" accent="Events"  />
-          <div className="flex gap-4 overflow-x-auto pb-4 px-6 snap-x snap-mandatory scrollbar-none">
-            {events.map((post, i) => (
-              <EventCard key={i} {...post as EventCardProps} />
-            ))}
-          </div>
-          <div className="flex justify-center mt-12">
+      <div className="mx-auto w-full max-w-6xl">
+        <SectionHeader label="The" accent="Events" />
+        <div className="flex gap-4 overflow-x-auto pb-4 px-6 snap-x snap-mandatory scrollbar-none">
+          {events.map((event, i) => (
+            <EventCard key={i} {...event} />
+          ))}
+        </div>
+        <div className="flex justify-center mt-12">
           <Link
             href="/events"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-ink border border-ink rounded-full transition-colors hover:bg-ink hover:text-white"
@@ -25,9 +24,9 @@ const Events = () => {
             </svg>
           </Link>
         </div>
-        </div>
-      </section>
-  )
-}
+      </div>
+    </section>
+  );
+};
 
-export default Events
+export default Events;

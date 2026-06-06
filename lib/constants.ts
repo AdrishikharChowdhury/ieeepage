@@ -173,30 +173,194 @@ export const blogs: BlogPost[] = [
   },
 ];
 
-export const events: BlogPost[] = [
+export interface Event {
+  slug: string;
+  title: string;
+  date: string;
+  time: string;
+  description: string;
+  agenda: string[];
+  details: string;
+  organiser: string;
+  tags: string[];
+  picture: string;
+  registrationLink: string;
+  tag: "product" | "standard" | "research" | "alert" | "award";
+  tagLabel: string;
+}
+
+export const events: Event[] = [
   {
+    slug: "ai-in-healthcare-tech-talk",
     title: "Tech Talk: AI in Healthcare",
     date: "Mar 15, 2025",
+    time: "2:00 PM – 4:30 PM",
+    description:
+      "AI is reshaping healthcare as we know it, and this talk brought that reality straight to our campus. From diagnosing diseases with computer vision to predicting patient outcomes using ML models, the session covered how algorithms are saving lives behind the scenes. The speaker walked us through real-world case studies — including an AI system that detects diabetic retinopathy better than human experts. It was the kind of talk that makes you want to pivot your entire career into health-tech.",
+    agenda: [
+      "Welcome & Introduction",
+      "Keynote: AI in Modern Healthcare",
+      "Case Study: Medical Imaging with Deep Learning",
+      "Live Demo: Disease Prediction Model",
+      "Q&A Session",
+      "Networking & Refreshments",
+    ],
+    details:
+      "Open to all IEEE members and non-members. Basic knowledge of ML is helpful but not required. Certificates will be provided to all attendees.",
+    organiser: "IEEE CIS Chapter, STCET",
+    tags: ["AI", "Healthcare", "Machine Learning", "Deep Learning"],
+    picture: "/events/highlights1.jpeg",
+    registrationLink: "https://forms.google.com/ai-healthcare-stcet",
     tag: "research",
     tagLabel: "Workshop",
   },
   {
+    slug: "ieee-hackathon-2025",
     title: "IEEE Hackathon 2025",
     date: "Feb 10, 2025",
+    time: "9:00 AM – 9:00 PM",
+    description:
+      "24 hours. Zero sleep. Maximum caffeine. That was the IEEE Hackathon 2025, and it was absolutely wild. Teams from across the college camped out in the labs, building everything from AI-powered chatbots to IoT-based disaster alert systems. The judges had a genuinely tough time picking winners because the quality of projects was insane. By the end of it, nobody wanted to go home — even after being awake for a full day. The winning team walked away with cash prizes, internship opportunities, and eternal bragging rights.",
+    agenda: [
+      "Registration & Team Formation",
+      "Opening Ceremony & Problem Statement Reveal",
+      "Hacking Begins!",
+      "Mid-way Check-in & Mentoring",
+      "Final Submissions",
+      "Project Presentations & Demos",
+      "Results & Prize Distribution",
+    ],
+    details:
+      "Teams of 3-4 members. Bring your own laptops. Food, snacks, and energy drinks will be provided throughout the event.",
+    organiser: "IEEE STCET Student Branch",
+    tags: ["Hackathon", "Coding", "Innovation", "Competition"],
+    picture: "/events/highlights2.jpeg",
+    registrationLink: "https://forms.google.com/ieee-hackathon-2025",
     tag: "product",
     tagLabel: "Competition",
   },
   {
+    slug: "industry-visit-google-office",
     title: "Industry Visit: Google Office",
     date: "Jan 22, 2025",
+    time: "10:00 AM – 4:00 PM",
+    description:
+      "Walking into the Google office felt like stepping into the future. From the open workstations to the nap pods and the endless snack bars — it was everything you'd imagine and more. But beyond the cool perks, the engineering team gave us a raw look at how Google builds products used by billions. We sat through sessions on site reliability engineering, saw how they run massive-scale A/B tests, and even got a peek at some internal tools. A bunch of students walked out with interview callbacks, so yeah, it was a good day.",
+    agenda: [
+      "Arrival & Office Tour",
+      "Welcome Talk by Google Engineers",
+      "Session: How Google Builds at Scale",
+      "Workshop: Cloud & Machine Learning APIs",
+      "Networking Lunch",
+      "Mock Interview Session",
+      "Goodies & Departure",
+    ],
+    details:
+      "Limited to 30 students. Selected based on resume shortlisting. Transport will be arranged from college.",
+    organiser: "IEEE IES Chapter, STCET",
+    tags: ["Industry Visit", "Google", "Cloud", "Career"],
+    picture: "/events/highlights3.jpeg",
+    registrationLink: "https://forms.google.com/google-visit-stcet",
     tag: "standard",
     tagLabel: "Industrial",
   },
   {
+    slug: "annual-ieee-banquet",
     title: "Annual IEEE Banquet",
     date: "Dec 20, 2024",
+    time: "6:00 PM – 10:00 PM",
+    description:
+      "The Annual IEEE Banquet was the perfect way to wrap up an incredible year. We had awards, performances, photo booths, and a dinner that honestly deserved its own standing ovation. The highlight of the evening was the awards ceremony — recognizing the people who put in the work behind all those events, workshops, and hackathons. There were speeches that made people laugh, a few that made people tear up, and a dance floor that stayed packed till the very end. Here's to another year of making IEEE STCET proud.",
+    agenda: [
+      "Welcome Drink & Networking",
+      "Year-in-Review Presentation",
+      "Award Ceremony",
+      "Cultural Performances",
+      "Keynote Address",
+      "Dinner & Dance",
+      "Photo Booth & Closing",
+    ],
+    details:
+      "Formal attire. IEEE members get complimentary entry. Non-members can purchase tickets at the door.",
+    organiser: "IEEE STCET Student Branch",
+    tags: ["Banquet", "Celebration", "Awards", "Networking"],
+    picture: "/events/highlights4.jpeg",
+    registrationLink: "",
     tag: "award",
     tagLabel: "Celebration",
+  },
+  {
+    slug: "robotics-workshop-series",
+    title: "Robotics Workshop Series: Build Your First Bot",
+    date: "Nov 8, 2024",
+    time: "11:00 AM – 5:00 PM",
+    description:
+      "Ever wanted to build a robot that actually does something? This workshop series made that dream real. Over two intensive days, participants went from zero to building fully functional line-following and obstacle-avoiding bots. We started with motor drivers and sensor calibration, then moved to PID controllers and autonomous navigation. By the end, robots were zipping across the track, dodging obstacles, and making their creators look like absolute geniuses. The best part? Everyone got to take their bot home.",
+    agenda: [
+      "Day 1: Electronics & Motor Drivers",
+      "Day 1: Sensor Calibration & Chassis Assembly",
+      "Day 2: Programming & PID Control",
+      "Day 2: Obstacle Avoidance Logic",
+      "Day 2: Competition: Line Following Race",
+      "Prize Distribution & Takeaways",
+    ],
+    details:
+      "All components provided. No prior robotics experience needed. Bring a laptop with Arduino IDE installed.",
+    organiser: "IEEE RAS Chapter, STCET",
+    tags: ["Robotics", "Arduino", "IoT", "Hands-on"],
+    picture: "/events/highlights5.jpeg",
+    registrationLink: "https://forms.google.com/robotics-workshop-stcet",
+    tag: "research",
+    tagLabel: "Workshop",
+  },
+  {
+    slug: "cybersecurity-awareness-campaign",
+    title: "Cybersecurity Awareness Campaign",
+    date: "Oct 15, 2024",
+    time: "10:00 AM – 3:00 PM",
+    description:
+      "Phishing, password hygiene, social engineering — this campaign tackled the stuff that actually matters in the real world. We set up stalls, ran interactive demos, and even staged a live 'hack' to show how easily weak passwords can be cracked. Students learned how to spot malicious emails, set up 2FA, and secure their digital footprint. The highlight was a CTF (Capture The Flag) challenge that had teams racing to find vulnerabilities in a mock web app. It was eye-opening, educational, and honestly kind of addictive.",
+    agenda: [
+      "Inaugural Talk: Why Cybersecurity Matters",
+      "Interactive Stalls & Demos",
+      "Live Hacking Demonstration",
+      "CTF Challenge: Capture The Flag",
+      "Workshop: Secure Coding Basics",
+      "Prize Distribution",
+    ],
+    details:
+      "Open to all. No technical background required for the awareness sessions. CTF requires basic web knowledge.",
+    organiser: "IEEE Computer Society Chapter, STCET",
+    tags: ["Cybersecurity", "CTF", "Awareness", "Hacking"],
+    picture: "/events/highlights6.jpeg",
+    registrationLink: "https://forms.google.com/cyber-awareness-stcet",
+    tag: "alert",
+    tagLabel: "Campaign",
+  },
+  {
+    slug: "entrepreneurship-summit-startup-pitch",
+    title: "Entrepreneurship Summit & Startup Pitch",
+    date: "Sep 20, 2024",
+    time: "9:30 AM – 5:00 PM",
+    description:
+      "If you've ever dreamed of starting your own company, this summit was the place to be. Entrepreneurs who've actually built successful startups shared their journeys — the failures, the pivots, and the breakthrough moments. The afternoon was all about action: teams pitched their startup ideas to a panel of investors and industry experts. Some pitches were brilliant, some were rough around the edges, but every single one came from a place of genuine passion. One team even got a mentorship offer on the spot. That's the kind of energy this event had.",
+    agenda: [
+      "Keynote: 'From Dorm Room to Boardroom'",
+      "Panel Discussion: Building in a Small Town",
+      "Workshop: Business Model Canvas",
+      "Networking Lunch",
+      "Startup Pitch Competition",
+      "Investor Feedback Session",
+      "Winners Announcement & Networking",
+    ],
+    details:
+      "Pitch competition is for teams of 2-4. Bring your pitch deck on a USB drive. All attendees get access to a network of mentors.",
+    organiser: "IEEE WIE AG & IES Chapter, STCET",
+    tags: ["Entrepreneurship", "Startup", "Pitch", "Networking"],
+    picture: "/events/highlights7.jpeg",
+    registrationLink: "https://forms.google.com/startup-summit-stcet",
+    tag: "product",
+    tagLabel: "Summit",
   },
 ];
 
