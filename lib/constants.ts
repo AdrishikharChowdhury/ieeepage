@@ -137,3 +137,39 @@ export const collegeLogos = [
   { src: "/makaut-webp.webp", alt: "MAKAUT" },
   { src: "/NBA-webp.webp", alt: "NBA" },
 ];
+
+export interface Chair {
+  name: string;
+  role: string;
+  avatar: string;
+  src: string;
+  alt: string;
+  color: string;
+}
+
+export const chairs: Chair[] = [
+  {
+    name: "Arjun Mitra",
+    role: "Chair",
+    avatar: "/ieeechair.jpg",
+    src: "/ies-ieee.png",
+    alt: "Industry Applications Society",
+    color: "bg-ieee-blue",
+  },
+  {
+    name: "Kaushiki Sarkar",
+    role: "Chair",
+    avatar: "/wiechair.jpg",
+    src: "/wie-logo.png",
+    alt: "Women in Engineering",
+    color: "bg-ieee-navy",
+  },
+  {
+    name: "Priyangshu Pal",
+    role: "Chair",
+    avatar: "/cischair.jpg",
+    src: "/cis-logo.png",
+    alt: "Computational Intelligence Society",
+    color: "bg-ieee-teal",
+  },
+];

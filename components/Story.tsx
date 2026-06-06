@@ -18,7 +18,7 @@ const Story = () => {
             <StoryCard key={i} {...m} index={i} />
           ))}
         </div>
-        <section className="w-full py-20 bg-light-canvas" id="stats">
+        <section className="w-full bg-light-canvas" id="stats">
         <div className="mx-auto w-full max-w-9xl px-6">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-2">
             {stats.map((stat, i) => (

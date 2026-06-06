@@ -1,4 +1,5 @@
 "use client";
+import { stats } from "@/lib/constants";
 import Aurora from "./Aurora";
 
 const Banner = () => {
@@ -41,22 +42,15 @@ const Banner = () => {
               </button>
             </div>
           </div>
+          
 
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-8 text-white/50 text-sm">
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-white/70 text-lg">200+</span>
-              Members
+            {stats.map((s,idx:number)=>(
+            <div key={idx} className="flex items-center gap-2">
+              <span className="font-bold text-white/70 text-lg">{s.value}</span>
+              {s.label}
             </div>
-            <div className="w-px h-4 bg-white/20" />
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-white/70 text-lg">50+</span>
-              Events
-            </div>
-            <div className="w-px h-4 bg-white/20" />
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-white/70 text-lg">15+</span>
-              Workshops
-            </div>
+          ))}
           </div>
         </div>
       </div>

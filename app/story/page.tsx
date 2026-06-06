@@ -11,7 +11,7 @@ function MilestoneCard({ date, title, description, idx }: { date: string; title:
       </span>
       <h2
         className="text-[26px] font-bold leading-[1.1] tracking-[0.52px] text-ink"
-        style={{ fontFamily: "'PP Neue Corp Compact', 'Oswald', 'Anton', sans-serif" }}
+        
       >
         {title}
       </h2>

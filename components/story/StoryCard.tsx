@@ -21,7 +21,7 @@ const StoryCard = ({ title, date, description, index }: StoryCardProps) => {
       <div className="flex flex-col gap-2">
         <h2
           className="text-[22px] font-bold leading-[1.1] tracking-[0.44px] text-white"
-          style={{ fontFamily: "'PP Neue Corp Compact', 'Oswald', 'Anton', sans-serif" }}
+          
         >
           {title}
         </h2>
