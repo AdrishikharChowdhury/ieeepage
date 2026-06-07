@@ -1,40 +1,94 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# IEEE STCET SB
+
+Official website for the IEEE Student Branch of St. Thomas' College of Engineering & Technology. Built with Next.js 16, Tailwind CSS v4, and Framer Motion.
+
+## Tech Stack
+
+| Layer | Choice |
+|-------|--------|
+| Framework | [Next.js 16](https://nextjs.org/) (App Router, SSG) |
+| Styling | [Tailwind CSS v4](https://tailwindcss.com/) + CSS custom properties |
+| Animation | [Framer Motion](https://motion.dev/) (entrance/hover), [GSAP](https://gsap.com/) (masonry), [OGL](https://github.com/oframe/ogl) (Aurora WebGL) |
+| Carousel | [Swiper](https://swiperjs.com/) |
+| Icons | [Lucide React](https://lucide.dev/) |
+| Fonts | Open Sans (body), Geist Mono / JetBrains Mono (code) |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  page.tsx          — Homepage (Banner, Story, Events, Board, Highlights)
+  layout.tsx        — Root layout (Navbar, PageLoader, Footer)
+  blogs/            — Blog listing + detail pages (SSG)
+  board/            — Full board listing page
+  events/           — Event listing + detail pages (SSG)
+  highlights/       — Highlights masonry gallery page
+  story/            — Story/milestones page
+components/
+  Banner.tsx        — Hero with Aurora WebGL shader
+  Navbar.tsx        — Desktop nav + mobile Dock navigation
+  Dock.tsx          — macOS-style Dock with magnifying hover
+  PageLoader.tsx    — Preloader (preloads critical images)
+  Board.tsx         — Homepage board section
+  Events.tsx        — Homepage events carousel
+  Story.tsx         — Homepage story + stats section
+  HighLights.tsx    — Homepage highlights carousel
+  Masonry.tsx       — GSAP-powered masonry grid for highlights
+  Aurora.tsx        — WebGL aurora shader (OGL)
+  Footer.tsx        — Site footer with links + socials
+  ui/               — Reusable: ChairCard, EventCard, BlogCard, StatCard, SectionHeader
+lib/
+  constants.ts      — All content data (events, chairs, stats, nav links, images)
+  utils.ts          — cn() utility (clsx + tailwind-merge)
+public/
+  webp/             — Optimized WebP images (chairs, logos)
+  events/webp/      — Optimized event/highlight WebP images
+  originals/        — Original JPEG/PNG files (preserved)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Key Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Fully responsive** — mobile, tablet, desktop breakpoints
+- **macOS-style Dock** — bottom navigation on mobile/tablet with magnifying hover
+- **WebGL Aurora Banner** — animated shader background on hero
+- **Image optimization** — WebP + AVIF via Next.js Image, preloaded by PageLoader
+- **Animations** — scroll-triggered section entrances, staggered card grids, spring hover effects
+- **SSG** — Events, blogs, and board pages pre-rendered at build time
 
-## Deploy on Vercel
+## Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Route | Content |
+|-------|---------|
+| `/` | Homepage with all sections |
+| `/events` | All events grid |
+| `/events/[slug]` | Event detail page |
+| `/blogs` | Blog listing |
+| `/blogs/[slug]` | Blog detail page |
+| `/board` | Full board (chairs + advisors) |
+| `/highlights` | Masonry image gallery |
+| `/story` | Branch story timeline |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# ieeepage
->>>>>>> fb6f72d660814f633e7df3477991578f3a7c9dae
+## Design Tokens
+
+Defined in `app/globals.css` under `@theme`:
+
+- IEEE brand colors: `ieee-blue`, `ieee-navy`, `ieee-teal`, `ieee-green`, `ieee-red`, `ieee-gold`
+- Surface: `light-canvas`, `white-card`
+- Text: `ink`
+- Radii: `cards` (40px), `pills` (800px), `tags` (20px)
