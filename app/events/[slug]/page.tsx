@@ -31,6 +31,8 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
               src={event.picture}
               alt={event.title}
               fill
+              decoding="async"
+              priority
               className="object-cover"
             />
           </div>

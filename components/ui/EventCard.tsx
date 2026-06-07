@@ -38,6 +38,8 @@ export function EventCard({ slug, title, date, time, description, picture, tags,
             alt={title}
             width={400}
             height={225}
+            decoding="async"
+            loading="eager"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>

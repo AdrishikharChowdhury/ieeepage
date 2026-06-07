@@ -9,7 +9,7 @@ const EventsPage = () => {
       <div className="mx-auto w-full max-w-7xl px-6">
         <SectionHeader label="The" accent="Events" />
         <SkeletonWrapper>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center sm:justify-items-stretch">
             {events.map((event, i) => (
               <EventCard key={i} {...event} />
             ))}
