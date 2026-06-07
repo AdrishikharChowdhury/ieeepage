@@ -10,15 +10,15 @@ export function ChairCard({ name, role, email, avatar, src, alt, color }: ChairC
     <div className="bg-white-card rounded-2xl overflow-hidden flex flex-col">
       <div className={`h-2 rounded-t-2xl w-full ${color}`} />
       <div className="flex flex-col items-center text-center gap-3">
-        <div className="overflow-hidden size-100 shrink-0">
-          <Image src={avatar} alt={name} width={160} height={80} className="w-full h-full object-cover" />
+        <div className="overflow-hidden w-full aspect-square shrink-0">
+          <Image src={avatar} alt={name} width={320} height={320} className="w-full h-full object-cover" />
         </div>
         <h3
-          className="text-2xl font-bold text-ink"
+          className="text-xl sm:text-2xl font-bold text-ink"
         >
           {name}
         </h3>
-        <span className="text-sm text-ink/50 -mt-1">{role}</span>
+        <span className="text-xs sm:text-sm text-ink/50 -mt-1">{role}</span>
         <a
           href={`mailto:${email}`}
           className="text-xs font-medium text-ieee-blue hover:underline"

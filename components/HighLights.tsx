@@ -11,7 +11,7 @@ const carouselImages = eventImages.map((img) => ({
 
 const HighLights = () => {
   return (
-    <section className="w-full py-20 bg-white-card" id="highlights">
+    <section className="w-full py-12 md:py-20 bg-white-card" id="highlights">
       <div className="mx-auto w-full max-w-7xl px-6">
         <SectionHeader label="The" accent="Highlights" />
         <div className="flex justify-center w-full">

@@ -106,13 +106,13 @@ export default function StoryPage() {
               />
             </div>
           </div>
-          <div className="flex justify-center flex-row md:flex-col gap-4">
+          <div className="flex justify-center flex-row md:flex-col gap-3 md:gap-4">
             {collegeLogos.map((logo) => (
               <div
                 key={logo.alt}
-                className="bg-white-card rounded-xl p-6 border border-ink/10 flex items-center justify-center"
+                className="bg-white-card rounded-xl p-3 md:p-4 border border-ink/10 flex items-center justify-center"
               >
-                <Image src={logo.src} alt={logo.alt} width={80} height={40} className="object-cover aspect-square size-25" />
+                <Image src={logo.src} alt={logo.alt} width={80} height={40} className="object-cover md:size-16" />
               </div>
             ))}
           </div>

@@ -7,19 +7,19 @@ import { StatCard } from "./ui/StatCard";
 const Story = () => {
   return (
     <section
-      className="w-full bg-light-canvas py-20 flex flex-col items-center"
+      className="w-full bg-light-canvas py-12 md:py-20 flex flex-col items-center"
       id="story"
     >
       <div className="w-full max-w-7xl px-6">
         <StoryHeader />
 
-        <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none mt-10 justify-center">
+        <div className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none mt-10 justify-center">
           {milestones.map((m, i) => (
             <StoryCard key={i} {...m} index={i} />
           ))}
         </div>
         <section className="w-full bg-light-canvas" id="stats">
-        <div className="mx-auto w-full max-w-9xl px-6">
+        <div className="mx-auto w-full max-w-7xl px-6">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-2">
             {stats.map((stat, i) => (
               <StatCard key={i} {...stat} />

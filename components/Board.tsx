@@ -5,12 +5,12 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const Board = () => {
   return (
-    <section id="board" className="w-full py-20 bg-light-canvas">
+    <section id="board" className="w-full py-12 md:py-20 bg-light-canvas">
       <div className="mx-auto w-full max-w-7xl px-6">
         <SectionHeader label="The" accent="Board" />
 
         <h2 className="text-2xl font-bold text-ink mb-6">Chairs</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 min-[773px]:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {chairs.map((chair, idx) => (
             <ChairCard key={idx} {...chair} />
           ))}

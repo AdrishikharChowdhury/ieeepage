@@ -21,9 +21,10 @@ Official website for the **IEEE Student Branch of St. Thomas' College of Enginee
 
 - **Framework:** Next.js 16 (App Router), React 19
 - **Styling:** Tailwind CSS v4 (`@import "tailwindcss"` + `@theme` block in `globals.css`)
-- **Animations:** GSAP (Masonry), Framer Motion (Dock, carousel entrance), OGL (Aurora WebGL)
+- **Animations:** GSAP (Masonry), Framer Motion v12 (Dock — imported from `'framer-motion'`, carousel entrance), OGL (Aurora WebGL)
 - **Carousel:** Swiper.js with creative effects
-- **Skeleton Loader:** `@aejkatappaja/phantom-ui` (web component)
+- **Skeleton Loader:** `@aejkatappaja/phantom-ui` (web component; import `ssr.css` in root layout)
+- **Skeleton Wrapper:** `SkeletonWrapper` wraps content on all subpages (blogs, blog detail, events, event detail, board, highlights)
 - **Icons:** lucide-react, inline SVGs
 - **State / Data:** All static — no API, no database, no auth
 

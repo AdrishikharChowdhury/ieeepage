@@ -37,13 +37,13 @@ function MailIcon() {
 export default function Footer() {
   return (
     <footer className="w-full bg-light-canvas pt-16 pb-8">
-      <section className="w-full py-20 bg-light-canvas">
+      <section className="w-full py-10 md:py-20 bg-light-canvas">
         <div className="mx-auto w-full max-w-7xl px-6">
           <LogoStrip logos={partnerLogos} />
         </div>
       </section>
       <div className="mx-auto w-full max-w-7xl px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 mb-12">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 font-bold mb-4">
               <span className="text-ieee-blue text-xl">IEEE</span> STCET SB

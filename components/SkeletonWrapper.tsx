@@ -12,7 +12,7 @@ export default function SkeletonWrapper({ children }: { children: React.ReactNod
   }, []);
 
   return (
-    <phantom-ui loading={loading} animation="shimmer" reveal={0.3} stagger={0.03}>
+    <phantom-ui loading={loading} animation="shimmer" reveal={0.3} stagger={0.03} suppressHydrationWarning>
       {children}
     </phantom-ui>
   );

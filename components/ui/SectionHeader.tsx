@@ -8,9 +8,9 @@ interface SectionHeaderProps {
 
 export function SectionHeader({ label, accent, className }: SectionHeaderProps) {
   return (
-    <div className={cn("mb-14", className)}>
+    <div className={cn("mb-8 md:mb-14", className)}>
       <h1
-        className="text-5xl md:text-6xl font-bold leading-[0.95] tracking-[1.28px] text-ink"
+        className="px-4 text-4xl sm:text-5xl md:text-6xl font-bold leading-[0.95] tracking-[1.28px] text-ink"
         style={{ fontFamily: "'PP Neue Corp Compact', 'Oswald', 'Anton', sans-serif" }}
       >
         {label}{" "}

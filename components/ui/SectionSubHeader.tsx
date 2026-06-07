@@ -10,7 +10,7 @@ export function SectionSubHeader({ label, accent, className }: SectionSubHeaderP
   return (
     <div className={cn("mb-14", className)}>
       <h1
-        className="text-3xl ml-6 md:text-4xl font-bold leading-[0.95] tracking-[1.28px] text-ink"
+        className="text-2xl sm:text-3xl md:text-4xl ml-6 sm:ml-6 font-bold leading-[0.95] tracking-[1.28px] text-ink"
       >
         {label}{" "}
         <span className="text-ieee-blue">{accent}</span>

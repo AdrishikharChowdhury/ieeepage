@@ -89,10 +89,16 @@ const Carousel_005 = ({
   const css = `
   .Carousal_005 {
     width: 100%;
-    height: 700px;
+    height: 400px;
     background-size: contain !important;
     background-position: center !important;
     padding-bottom: 50px !important;
+  }
+  @media (min-width: 768px) {
+    .Carousal_005 { height: 600px; }
+  }
+  @media (min-width: 1024px) {
+    .Carousal_005 { height: 700px; }
   }
   
   .Carousal_005 .swiper-slide {
@@ -114,7 +120,7 @@ const Carousel_005 = ({
         duration: 0.3,
         delay: 0.5,
       }}
-      className={cn("relative w-full max-w-4xl px-5", className)}
+      className={cn("relative w-full max-w-4xl px-2 sm:px-5", className)}
     >
       <style>{css}</style>
 

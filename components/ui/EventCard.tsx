@@ -29,7 +29,7 @@ export function EventCard({ slug, title, date, time, description, picture, tags,
     <Link href={`/events/${slug}`}>
       <article
         className={cn(
-          "bg-white-card rounded-2xl border border-ink/10 flex flex-col gap-3 min-w-90 w-1/4 shrink-0 cursor-pointer group h-full",
+          "bg-white-card rounded-2xl border border-ink/10 flex flex-col gap-3 min-w-[280px] sm:min-w-90 w-[85vw] sm:w-1/4 shrink-0 cursor-pointer group h-full",
         )}
       >
         <div className="aspect-video rounded-t-2xl overflow-hidden">
