@@ -3,23 +3,65 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
+const imagesToPreload = [
+  "/logo.png",
+  "/webp/ieeechair.webp",
+  "/webp/wiechair.webp",
+  "/webp/cischair.webp",
+  "/webp/ies-ieee.webp",
+  "/webp/wie-logo.webp",
+  "/webp/cis-logo.webp",
+  "/events/webp/highlights1.webp",
+  "/events/webp/highlights2.webp",
+  "/events/webp/highlights3.webp",
+  "/events/webp/highlights4.webp",
+  "/events/webp/highlights5.webp",
+  "/events/webp/highlights6.webp",
+  "/events/webp/highlights7.webp",
+];
+
+function preloadImages(urls: string[]): Promise<number> {
+  let loaded = 0;
+  return new Promise((resolve) => {
+    if (urls.length === 0) {
+      resolve(0);
+      return;
+    }
+    urls.forEach((url) => {
+      const img = new Image();
+      img.onload = img.onerror = () => {
+        loaded++;
+        if (loaded >= urls.length) resolve(loaded);
+      };
+      img.src = url;
+    });
+  });
+}
+
 export default function PageLoader() {
   const [progress, setProgress] = useState(0);
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(timer);
-          return 100;
-        }
-        const increment = Math.random() * 15 + 5;
-        return Math.min(prev + increment, 100);
-      });
-    }, 200);
+    const minTime = 1500;
+    const start = Date.now();
 
-    return () => clearInterval(timer);
+    preloadImages(imagesToPreload).then((total) => {
+      const elapsed = Date.now() - start;
+      const remaining = Math.max(0, minTime - elapsed);
+      setTimeout(() => setProgress(100), remaining);
+    });
+
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        const elapsed = Date.now() - start;
+        if (elapsed >= minTime) return prev;
+        const timeProgress = (elapsed / minTime) * 70;
+        return Math.min(Math.max(prev, timeProgress), 99);
+      });
+    }, 100);
+
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
