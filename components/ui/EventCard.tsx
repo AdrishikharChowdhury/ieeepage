@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
@@ -24,12 +26,20 @@ const tagStyles: Record<TagVariant, string> = {
   award: "bg-[var(--color-ieee-gold)] text-[var(--color-ink)]",
 };
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
 export function EventCard({ slug, title, date, time, description, picture, tags, tag, tagLabel }: EventCardProps) {
   return (
     <Link href={`/events/${slug}`}>
-      <article
+      <motion.article
+        variants={cardVariants}
+        whileHover={{ y: -4, boxShadow: "0 12px 40px rgba(0,0,0,0.06)" }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
         className={cn(
-          "bg-white-card rounded-2xl border border-ink/10 flex flex-col gap-3 min-w-[280px] sm:min-w-90 w-[85vw] sm:w-1/4 shrink-0 cursor-pointer group h-full",
+          "bg-white-card rounded-2xl border border-ink/10 flex flex-col gap-3 min-w-70 sm:min-w-90 w-[85vw] sm:w-1/4 shrink-0 cursor-pointer group h-full",
         )}
       >
         <div className="aspect-video rounded-t-2xl overflow-hidden">
@@ -64,7 +74,7 @@ export function EventCard({ slug, title, date, time, description, picture, tags,
             ))}
           </div>
         </div>
-      </article>
+      </motion.article>
     </Link>
   );
 }

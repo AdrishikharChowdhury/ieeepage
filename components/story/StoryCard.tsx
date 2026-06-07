@@ -13,7 +13,7 @@ const StoryCard = ({ title, date, description, index }: StoryCardProps) => {
   const bg = storyCardColors[index % storyCardColors.length];
 
   return (
-    <div className={`${bg} rounded-2xl p-6 flex flex-col gap-4 min-w-[260px] sm:min-w-75 w-[80vw] sm:w-85 shrink-0`}>
+    <div className={`${bg} rounded-2xl p-6 flex flex-col gap-4 min-w-70 sm:min-w-75 w-[80vw] sm:w-85 shrink-0 min-h-full`}>
       <MilestoneButton index={index} />
       <span className="text-[11px] font-bold text-white/80 bg-white/15 px-3 py-1.5 rounded-tags self-start leading-tight">
         {date}

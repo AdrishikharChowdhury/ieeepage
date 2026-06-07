@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface StatCardProps {
@@ -9,7 +11,11 @@ interface StatCardProps {
 
 export function StatCard({ label, value, variant = "primary", className }: StatCardProps) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, scale: 0.85 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       className={cn(
         "rounded-2xl sm:rounded-[40px] px-3 py-4 sm:px-6 md:px-8 md:py-6 flex flex-col gap-1",
         variant === "primary" && "bg-ieee-blue",
@@ -22,6 +28,6 @@ export function StatCard({ label, value, variant = "primary", className }: StatC
         {value}
       </span>
       <span className="text-xs sm:text-sm text-white/90 font-medium">{label}</span>
-    </div>
+    </motion.div>
   );
 }

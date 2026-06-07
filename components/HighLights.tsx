@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import { SectionHeader } from "./ui/SectionHeader";
 import Link from "next/link";
 import { eventImages } from "@/lib/constants";
@@ -11,7 +12,13 @@ const carouselImages = eventImages.map((img) => ({
 
 const HighLights = () => {
   return (
-    <section className="w-full py-12 md:py-20 bg-white-card" id="highlights" style={{ contain: 'layout style paint' }}>
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.6 }}
+      className="w-full py-12 md:py-20 bg-white-card" id="highlights" style={{ contain: 'layout style paint' }}
+    >
       <div className="mx-auto w-full max-w-7xl px-6">
         <SectionHeader label="The" accent="Highlights" />
         <div className="flex justify-center w-full">
@@ -47,7 +54,7 @@ const HighLights = () => {
           </Link>
         </div>
       </div>
-    </section>
+      </motion.section>
   );
 };
 

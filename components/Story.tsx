@@ -1,12 +1,28 @@
+"use client";
+import { motion } from "framer-motion";
 import StoryHeader from "@/components/story/StoryHeader";
 import StoryCard from "@/components/story/StoryCard";
 import Link from "next/link";
 import { milestones, stats } from "@/lib/constants";
 import { StatCard } from "./ui/StatCard";
 
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
+};
+
 const Story = () => {
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.05 }}
+      transition={{ duration: 0.5 }}
       className="w-full bg-light-canvas py-12 md:py-20 flex flex-col items-center"
       id="story"
       style={{ contain: 'layout style paint' }}
@@ -14,18 +30,34 @@ const Story = () => {
       <div className="w-full max-w-7xl px-6">
         <StoryHeader />
 
-        <div className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none mt-10 justify-start lg:justify-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={containerVariants}
+          className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none mt-10 justify-start lg:justify-center"
+        >
           {milestones.map((m, i) => (
-            <StoryCard key={i} {...m} index={i} />
+            <motion.div key={i} variants={cardVariants}>
+              <StoryCard {...m} index={i} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         <section className="w-full bg-light-canvas" id="stats">
         <div className="mx-auto w-full max-w-7xl px-6">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-2">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={containerVariants}
+            className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-2"
+          >
             {stats.map((stat, i) => (
-              <StatCard key={i} {...stat} />
+              <motion.div key={i} variants={cardVariants}>
+                <StatCard {...stat} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
         <div className="flex justify-center mt-12">
@@ -40,7 +72,7 @@ const Story = () => {
           </Link>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

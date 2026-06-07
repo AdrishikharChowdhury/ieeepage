@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
@@ -25,7 +27,9 @@ export function BlogCard({
   className,
 }: BlogCardProps) {
   return (
-    <article
+    <motion.article
+      whileHover={{ y: -4, boxShadow: "0 12px 40px rgba(0,0,0,0.06)" }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className={cn(
         "bg-white-card rounded-2xl border border-ink/10 flex flex-col gap-3 p-6",
         className,
@@ -68,6 +72,6 @@ export function BlogCard({
           )}
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }

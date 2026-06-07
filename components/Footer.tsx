@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { footerLinkGroups, partnerLogos } from "@/lib/constants";
 import { LogoStrip } from "./ui/LogoStrip";
@@ -42,7 +44,13 @@ export default function Footer() {
           <LogoStrip logos={partnerLogos} />
         </div>
       </section>
-      <div className="mx-auto w-full max-w-7xl px-6">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.5 }}
+        className="mx-auto w-full max-w-7xl px-6"
+      >
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 mb-12">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 font-bold mb-4">
@@ -100,7 +108,7 @@ export default function Footer() {
             IEEE STCET Student Branch. All rights reserved.
           </p>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import type { Chair } from "@/lib/constants";
 
@@ -7,7 +9,11 @@ interface ChairCardProps extends Chair {
 
 export function ChairCard({ name, role, email, avatar, src, alt, color }: ChairCardProps) {
   return (
-    <div className="bg-white-card rounded-2xl overflow-hidden flex flex-col">
+    <motion.div
+      whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      className="bg-white-card rounded-2xl overflow-hidden flex flex-col"
+    >
       <div className={`h-2 rounded-t-2xl w-full ${color}`} />
       <div className="flex flex-col items-center text-center gap-3">
         <div className="overflow-hidden w-full aspect-square shrink-0">
@@ -30,6 +36,6 @@ export function ChairCard({ name, role, email, avatar, src, alt, color }: ChairC
           <span className="text-xs font-medium text-ink/70">{alt}</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

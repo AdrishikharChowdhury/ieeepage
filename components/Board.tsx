@@ -1,7 +1,14 @@
+"use client";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { chairs } from "@/lib/constants";
 import { ChairCard } from "@/components/ui/ChairCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
 
 const Board = () => {
   return (
@@ -10,11 +17,25 @@ const Board = () => {
         <SectionHeader label="The" accent="Board" />
 
         <h2 className="text-2xl font-bold text-ink mb-6">Chairs</h2>
-        <div className="grid grid-cols-1 min-[773px]:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={containerVariants}
+          className="grid grid-cols-1 min-[773px]:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+        >
           {chairs.map((chair, idx) => (
-            <ChairCard key={idx} {...chair} />
+            <motion.div
+              key={idx}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
+              }}
+            >
+              <ChairCard {...chair} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <div className="flex justify-center mt-12">
           <Link

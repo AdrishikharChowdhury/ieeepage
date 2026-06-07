@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -48,7 +49,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-4">
+      <motion.nav
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-4"
+      >
         <div className="flex items-center justify-between bg-white rounded-2xl px-4 sm:px-6 py-3 sm:py-4">
           <Link href="/" className="flex items-center justify-center gap-1.5 sm:gap-2 shrink-0">
             <Image src='/logo.png' alt='IEEE STCET SB' width={100} height={50} className="size-9 sm:size-16 object-contain" />
@@ -82,17 +88,22 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             <Link
               href="/blogs"
-              className="bg-ieee-blue text-white text-xs sm:text-sm md:text-md font-medium px-3 py-3 sm:px-6 md:px-8 md:py-5 rounded-lg sm:rounded-xl transition-opacity hover:opacity-90 leading-none"
+              className="bg-ieee-blue text-white text-xs sm:text-sm md:text-md lg:text-lg font-medium px-3 py-3 sm:px-6 md:px-6 md:py-4 transition-opacity hover:opacity-90 leading-none"
             >
               Blogs
             </Link>
           </div>
         </div>
-      </nav>
+      </motion.nav>
 
-      <div className="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+        className="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50"
+      >
         <Dock items={dockItems} panelHeight={56} baseItemSize={44} magnification={56} distance={120} />
-      </div>
+      </motion.div>
     </>
   );
 };
