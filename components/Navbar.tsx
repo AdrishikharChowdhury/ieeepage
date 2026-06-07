@@ -38,10 +38,10 @@ const Navbar = () => {
     icon: <span className={pathname === route || (pathname === '/' && hash === `#${id}`) ? 'text-ieee-blue' : 'text-ink/60'}>{iconMap[label] || <Home size={20} />}</span>,
     label: <span className={pathname === route || (pathname === '/' && hash === `#${id}`) ? 'text-ieee-blue font-semibold' : ''}>{label}</span>,
     onClick: () => {
-      if (pathname === '/' && id !== 'home') {
+      if (pathname === '/') {
         handleClick(id);
       } else {
-        window.location.href = pathname === '/' ? `#${id}` : route;
+        window.location.href = route;
       }
     },
   }));
