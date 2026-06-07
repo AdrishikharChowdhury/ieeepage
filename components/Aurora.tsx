@@ -149,7 +149,10 @@ export default function Aurora(props: AuroraProps) {
       if (!ctn) return;
       const width = ctn.offsetWidth;
       const height = ctn.offsetHeight;
-      renderer.setSize(width, height);
+      const scale = isMobile.current ? 0.5 : 1;
+      renderer.setSize(width * scale, height * scale);
+      gl.canvas.style.width = width + 'px';
+      gl.canvas.style.height = height + 'px';
       if (program) {
         program.uniforms.uResolution.value = [width, height];
       }

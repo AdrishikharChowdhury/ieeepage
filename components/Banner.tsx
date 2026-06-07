@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const Banner = () => {
   return (
-    <section className="w-full h-screen bg-white p-4 sm:p-6 md:p-10">
-      <div className="bg-blue-800 h-full rounded-2xl overflow-hidden relative" id="home" >
+    <section className="w-full h-screen bg-white p-4 sm:p-6 md:p-10" id="home">
+      <div className="bg-blue-800 h-full rounded-2xl overflow-hidden relative" >
         <Aurora
           colorStops={["#00d4ff", "#0072ff", "#00d4ff"]}
           blend={0.5}
