@@ -9,6 +9,7 @@ const Story = () => {
     <section
       className="w-full bg-light-canvas py-12 md:py-20 flex flex-col items-center"
       id="story"
+      style={{ contentVisibility: 'auto', contain: 'layout style paint' }}
     >
       <div className="w-full max-w-7xl px-6">
         <StoryHeader />
