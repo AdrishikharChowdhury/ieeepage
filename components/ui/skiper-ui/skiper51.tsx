@@ -178,6 +178,8 @@ const Carousel_005 = ({
                 className="h-full w-full scale-100 rounded-3xl object-cover"
                 src={image.src}
                 alt={image.alt}
+                loading="lazy"
+                decoding="async"
               />
             </SwiperSlide>
           ))}

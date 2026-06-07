@@ -121,6 +121,11 @@ export default function Aurora(props: AuroraProps) {
   propsRef.current = props;
 
   const ctnDom = useRef<HTMLDivElement>(null);
+  const isMobile = useRef(false);
+
+  useEffect(() => {
+    isMobile.current = 'ontouchstart' in window || window.innerWidth < 768;
+  }, []);
 
   useEffect(() => {
     const ctn = ctnDom.current;
@@ -129,7 +134,8 @@ export default function Aurora(props: AuroraProps) {
     const renderer = new Renderer({
       alpha: true,
       premultipliedAlpha: true,
-      antialias: true
+      antialias: !isMobile.current,
+      powerPreference: isMobile.current ? 'low-power' : 'high-performance',
     });
     const gl = renderer.gl;
     gl.clearColor(0, 0, 0, 0);

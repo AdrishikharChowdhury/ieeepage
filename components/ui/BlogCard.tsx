@@ -54,6 +54,7 @@ export function BlogCard({
           src={`https://api.dicebear.com/10.x/triangles/svg?seed=${author}`}
           alt={author}
           className="size-10 rounded-full bg-ink/5 shrink-0"
+          loading="lazy"
         />
         <div>
           <p className="text-sm font-semibold text-ink">{author}</p>

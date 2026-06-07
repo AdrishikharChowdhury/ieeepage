@@ -29,6 +29,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               src={`https://api.dicebear.com/10.x/triangles/svg?seed=${post.author}`}
               alt={post.author!}
               className="size-12 rounded-full bg-ink/5 shrink-0"
+              loading="lazy"
             />
             <div>
               <p className="text-sm font-semibold text-ink">{post.author}</p>
