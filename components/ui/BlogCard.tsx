@@ -40,7 +40,7 @@ export function BlogCard({
         {tagLabel}
       </span>
       <div className="flex w-full justify-between items-center">
-        <h3 className="text-[26px] font-bold leading-[1.1] tracking-[0.52px] text-ink">
+        <h3 className="text-xl sm:text-[26px] font-bold leading-[1.1] tracking-[0.52px] text-ink">
           {title}
         </h3>
         <Link href={`/blogs/${slug}`}>

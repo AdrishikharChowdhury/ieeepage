@@ -84,7 +84,7 @@ const Navbar = () => {
               href="/blogs"
               className="bg-ieee-blue text-white text-sm sm:text-md font-medium px-4 py-3 sm:px-8 sm:py-5 rounded-xl transition-opacity hover:opacity-90 leading-none"
             >
-              Stories
+              Blogs
             </Link>
           </div>
         </div>

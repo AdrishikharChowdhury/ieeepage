@@ -13,7 +13,7 @@ const Story = () => {
       <div className="w-full max-w-7xl px-6">
         <StoryHeader />
 
-        <div className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none mt-10 justify-center">
+        <div className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none mt-10 justify-start lg:justify-center">
           {milestones.map((m, i) => (
             <StoryCard key={i} {...m} index={i} />
           ))}

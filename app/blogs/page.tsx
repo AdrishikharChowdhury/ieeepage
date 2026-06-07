@@ -19,7 +19,7 @@ export default function BlogsPage() {
     <div className="w-full bg-light-canvas mt-50 pb-16">
       <section className="mx-auto w-full max-w-7xl px-6">
         <SectionHeader label="Our" accent="Blogs" />
-        <div className="flex justify-end mb-6">
+        <div className="flex justify-end mb-6 -mt-4 sm:-mt-0">
           <a
             href="mailto:ieeestcet@stcet.ac.in?subject=New Blog Submission"
             className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white bg-ieee-blue rounded-full hover:bg-ieee-blue/90 transition-colors"
@@ -31,7 +31,7 @@ export default function BlogsPage() {
           </a>
         </div>
         <SkeletonWrapper>
-          <div className="grid grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
             {blogs.map((post, idx) => (
               <BlogCard
                 key={idx}
