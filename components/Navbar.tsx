@@ -50,9 +50,9 @@ const Navbar = () => {
     <>
       <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-4">
         <div className="flex items-center justify-between bg-white rounded-2xl px-4 sm:px-6 py-3 sm:py-4">
-          <Link href="/" className="flex items-center justify-center gap-2 shrink-0">
-            <Image src='/logo.png' alt='IEEE STCET SB' width={100} height={50} className="object-cover" />
-            <span className="text-xl sm:text-2xl font-bold leading-none tracking-tight ">
+          <Link href="/" className="flex items-center justify-center gap-1.5 sm:gap-2 shrink-0">
+            <Image src='/logo.png' alt='IEEE STCET SB' width={100} height={50} className="size-9 sm:size-16 object-contain" />
+            <span className="text-xs sm:text-lg md:text-2xl font-bold leading-none tracking-tight">
               <span className="text-ieee-blue">IEEE</span> STCET SB
             </span>
           </Link>
@@ -82,7 +82,7 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             <Link
               href="/blogs"
-              className="bg-ieee-blue text-white text-sm sm:text-md font-medium px-4 py-3 sm:px-8 sm:py-5 rounded-xl transition-opacity hover:opacity-90 leading-none"
+              className="bg-ieee-blue text-white text-xs sm:text-sm md:text-md font-medium px-3 py-3 sm:px-6 md:px-8 md:py-5 rounded-lg sm:rounded-xl transition-opacity hover:opacity-90 leading-none"
             >
               Blogs
             </Link>
