@@ -5,7 +5,7 @@ import { events } from '@/lib/constants';
 
 const Events = () => {
   return (
-    <section className="w-full py-12 md:py-20 bg-white-card" id="events" style={{ contentVisibility: 'auto', contain: 'layout style paint' }}>
+    <section className="w-full py-12 md:py-20 bg-white-card" id="events" style={{ contain: 'layout style paint' }}>
       <div className="mx-auto w-full max-w-6xl">
         <SectionHeader label="The" accent="Events" />
         <div className="flex gap-4 overflow-x-auto pb-4 px-4 sm:px-6 snap-x snap-mandatory scrollbar-none">
